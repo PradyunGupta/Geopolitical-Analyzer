@@ -378,7 +378,8 @@ function ChatApplication() {
         text: msg.text
       }));
 
-      const response = await fetch('http://127.0.0.1:8000/analyze', {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000';
+      const response = await fetch(`${API_BASE_URL}/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
