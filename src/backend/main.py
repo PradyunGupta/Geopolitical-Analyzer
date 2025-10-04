@@ -26,10 +26,12 @@ app = FastAPI(
 
 
 origins = [
-    "http://localhost:3000",
+    "https://geopolanalyzer.onrender.com", # Deployed frontend URL
+    "http://localhost:3000",              # Local development
     "http://localhost:3001",
     "http://127.0.0.1:3000",
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
